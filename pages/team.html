@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team — Annan Software Team | Meet the Developers</title>
+  <meta name="description" content="Meet the Annan Software Team — a full-stack development crew from Nairobi, Kenya with expertise in web, mobile, 3D, cybersecurity, and software training." />
+  <link rel="canonical" href="https://ast.dev/pages/team.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .team-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .team-full-card {
+      background: var(--white);
+      border: 1px solid var(--light-grey);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .team-full-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .team-full-avatar {
+      height: 260px;
+      background: linear-gradient(160deg, var(--navy-mid), var(--navy-deep));
+      overflow: hidden;
+      position: relative;
+    }
+    .team-full-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .team-full-avatar-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .team-full-avatar-placeholder svg { width: 72px; height: 72px; color: rgba(201,168,76,0.3); }
+    .team-leader-badge {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+    .team-full-body { padding: 28px; }
+    .team-full-body h3 {
+      font-family: var(--ff-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .team-full-role {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+    .team-full-bio {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .team-full-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 18px;
+    }
+    .team-full-socials { display: flex; gap: 8px; }
+    .team-full-social {
+      width: 32px; height: 32px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--light-grey);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-light);
+      transition: var(--transition);
+    }
+    .team-full-social:hover { border-color: var(--gold); color: var(--gold); }
+    .team-full-social svg { width: 14px; height: 14px; }
+
+    .culture-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .culture-card {
+      text-align: center;
+      padding: 32px 20px;
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+    .culture-card:hover { border-color: var(--gold); }
+    .culture-card svg { width: 32px; height: 32px; color: var(--gold); margin: 0 auto 16px; display: block; }
+    .culture-card h4 { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+    .culture-card p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+    @media (max-width: 1024px) { .team-full-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      .team-full-grid { grid-template-columns: 1fr; }
+      .culture-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="AST Home">
+        <div class="nav-logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        </div>
+        <span>A</span>nnan <span>&nbsp;Software&nbsp;</span> Team
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="team.html" class="active">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-gold nav-cta">Start a Project</a>
+      <div class="nav-hamburger" id="hamburger" role="button" aria-label="Toggle menu" tabindex="0"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="../index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="team.html" class="active">Team</a><a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-gold" style="margin-top:12px;justify-content:center;">Start a Project</a>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        <span>Team</span>
+      </nav>
+      <h1>The People <span>Behind the Code</span></h1>
+      <p>AST is built on individual expertise and collective ownership. Every member of this team is a specialist who also cares deeply about the final product as a whole.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM GRID -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center">
+      <span class="tag">The Team</span>
+      <h2 class="section-title">Meet Annan Software Team</h2>
+      <p class="section-sub">A complete full-stack squad — from pixels to servers, mobile to 3D, and security to education.</p>
+    </div>
+    <div class="team-full-grid">
+
+      <!-- Annan — Leader -->
+      <div class="team-full-card fade-up">
+        <div class="team-full-avatar">
+          <img src="../images/team-annan.jpg" alt="Annan Ogero — Team Lead and Frontend Developer" loading="lazy" />
+          <span class="team-leader-badge">Team Lead</span>
+        </div>
+        <div class="team-full-body">
+          <h3>Annan Ogero</h3>
+          <div class="team-full-role">Founder · Frontend Developer</div>
+          <p class="team-full-bio">Annan leads AST with a sharp focus on quality, business thinking, and frontend craft. He built Postique, VitaLink, Darwin's Hotel, and the ST. PVTC site. He also runs the Wealth Hunters WhatsApp community and teaches software at St. Paul's PVTC.</p>
+          <div class="team-full-skills">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Vite</span>
+            <span class="skill-tag">Tailwind</span>
+            <span class="skill-tag">Three.js</span>
+            <span class="skill-tag">SEO</span>
+            <span class="skill-tag">EmailJS</span>
+            <span class="skill-tag">HTML/CSS/JS</span>
+          </div>
+          <div class="team-full-socials">
+            <a href="https://github.com/Annan-Ogero" class="team-full-social" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/annan-ogero-3553473a7" class="team-full-social" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://x.com/ogero9258" class="team-full-social" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l16 16M4 20L20 4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend Developer -->
+      <div class="team-full-card fade-up">
+        <div class="team-full-avatar">
+          <img src="../images/team-member2.jpg" alt="Backend Developer" loading="lazy" />
+        </div>
+        <div class="team-full-body">
+          <h3>Team Member</h3>
+          <div class="team-full-role">Backend Developer</div>
+          <p class="team-full-bio">Handles server-side logic, database architecture, and API development. Experienced in building scalable backend systems with Node.js and Firebase that power AST's most complex client applications.</p>
+          <div class="team-full-skills">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Firebase</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Authentication</span>
+            <span class="skill-tag">Real-time DB</span>
+          </div>
+          <div class="team-full-socials">
+            <a href="https://github.com/Annan-Ogero" class="team-full-social" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Developer -->
+      <div class="team-full-card fade-up">
+        <div class="team-full-avatar">
+          <img src="../images/team-member3.jpg" alt="Mobile App Developer" loading="lazy" />
+        </div>
+        <div class="team-full-body">
+          <h3>Team Member</h3>
+          <div class="team-full-role">Mobile Developer</div>
+          <p class="team-full-bio">Specialises in cross-platform mobile development using React Native and Expo. Has delivered apps with M-Pesa Daraja payment integration, offline-first capability, and full App Store/Play Store deployment pipelines.</p>
+          <div class="team-full-skills">
+            <span class="skill-tag">React Native</span>
+            <span class="skill-tag">Expo</span>
+            <span class="skill-tag">M-Pesa Daraja</span>
+            <span class="skill-tag">Firebase</span>
+            <span class="skill-tag">iOS & Android</span>
+          </div>
+          <div class="team-full-socials">
+            <a href="https://github.com/Annan-Ogero" class="team-full-social" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Developer -->
+      <div class="team-full-card fade-up">
+        <div class="team-full-avatar">
+          <img src="../images/team-member4.jpg" alt="3D Developer" loading="lazy" />
+        </div>
+        <div class="team-full-body">
+          <h3>Team Member</h3>
+          <div class="team-full-role">3D & Creative Developer</div>
+          <p class="team-full-bio">One of AST's Three.js and React Three Fiber specialists. Creates scroll-driven 3D experiences, interactive product showcases, and WebGL-powered visual work that sets AST apart from standard web agencies.</p>
+          <div class="team-full-skills">
+            <span class="skill-tag">Three.js</span>
+            <span class="skill-tag">React Three Fiber</span>
+            <span class="skill-tag">Blender</span>
+            <span class="skill-tag">WebGL</span>
+            <span class="skill-tag">GSAP</span>
+          </div>
+          <div class="team-full-socials">
+            <a href="https://github.com/Annan-Ogero" class="team-full-social" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cybersecurity Expert -->
+      <div class="team-full-card fade-up">
+        <div class="team-full-avatar">
+          <img src="../images/team-member5.jpg" alt="Cybersecurity Expert" loading="lazy" />
+        </div>
+        <div class="team-full-body">
+          <h3>Team Member</h3>
+          <div class="team-full-role">Cybersecurity Expert</div>
+          <p class="team-full-bio">AST's security lead. Conducts penetration tests, builds endpoint protection tools, and reviews codebases for vulnerabilities. Ensures that every project AST ships is secure by design — not by accident.</p>
+          <div class="team-full-skills">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Penetration Testing</span>
+            <span class="skill-tag">OWASP</span>
+            <span class="skill-tag">Endpoint Security</span>
+            <span class="skill-tag">Threat Analysis</span>
+          </div>
+          <div class="team-full-socials">
+            <a href="https://github.com/Annan-Ogero" class="team-full-social" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Stack Developer -->
+      <div class="team-full-card fade-up">
+        <div class="team-full-avatar">
+          <img src="../images/team-member6.jpg" alt="Full Stack Developer" loading="lazy" />
+        </div>
+        <div class="team-full-body">
+          <h3>Team Member</h3>
+          <div class="team-full-role">Full Stack Developer</div>
+          <p class="team-full-bio">Bridges front and back — equally comfortable building React interfaces and Node.js APIs. Takes ownership of entire features from database schema to deployed UI, making them a force multiplier on any project.</p>
+          <div class="team-full-skills">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Firebase</span>
+            <span class="skill-tag">Tailwind</span>
+            <span class="skill-tag">SQL</span>
+          </div>
+          <div class="team-full-socials">
+            <a href="https://github.com/Annan-Ogero" class="team-full-social" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TEAM CULTURE -->
+<section class="section section-navy" aria-labelledby="culture-heading">
+  <div class="container">
+    <div class="section-header center">
+      <span class="tag">How We Operate</span>
+      <h2 class="section-title light" id="culture-heading">A Team Built for Real Work</h2>
+      <p class="section-sub light">We're not a loose collection of freelancers — we operate as a cohesive unit with shared standards and mutual accountability.</p>
+    </div>
+    <div class="culture-grid">
+      <div class="culture-card fade-up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        <h4>We Ship</h4>
+        <p>60+ projects aren't built by people who talk — they're built by people who execute. We deliver.</p>
+      </div>
+      <div class="culture-card fade-up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <h4>Security First</h4>
+        <p>Every line of code is written with security in mind. Our cybersecurity team reviews every major project.</p>
+      </div>
+      <div class="culture-card fade-up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+        <h4>We Teach</h4>
+        <p>Teaching forces mastery. Our team lectures at PVTC and runs online classes — so we understand our craft deeply.</p>
+      </div>
+      <div class="culture-card fade-up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <h4>Africa-Native</h4>
+        <p>We build for the African market — M-Pesa, low bandwidth, local-first. We don't bolt on context, it's built in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN THE TEAM -->
+<section class="section section-light" aria-labelledby="join-heading">
+  <div class="container">
+    <div style="max-width:640px; margin:0 auto; text-align:center;">
+      <span class="tag">Join AST</span>
+      <h2 class="section-title" id="join-heading">Think You Belong Here?</h2>
+      <p style="color:var(--text-mid); font-size:16px; line-height:1.75; margin-bottom:32px;">We're always open to exceptional developers who share our standards and hunger for craft. If you're a specialist in any of our domains and want to build things that matter, reach out.</p>
+      <a href="contact.html" class="btn btn-gold">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <span class="tag">Work With Us</span>
+    <h2 class="section-title" style="max-width:580px; margin:0 auto 16px;">Ready to Work With a Team Like This?</h2>
+    <p class="section-sub" style="max-width:480px; margin:0 auto 36px;">Tell us your project and we'll match the right members of the team to your needs.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-gold">Start a Project</a>
+      <a href="projects.html" class="btn btn-outline-navy">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo" style="display:inline-flex;">
+          <div class="nav-logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div>
+          <span style="font-family:var(--ff-display); font-size:18px; font-weight:700; color:var(--white); margin-left:10px;"><span style="color:var(--gold);">A</span>ST</span>
+        </a>
+        <p>Full-stack software development from Nairobi, Kenya.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/Annan-Ogero" class="footer-social" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+          <a href="https://www.linkedin.com/in/annan-ogero-3553473a7" class="footer-social" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About AST</a></li><li><a href="team.html">Our Team</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Web Development</a></li><li><a href="services.html">Mobile Apps</a></li><li><a href="services.html">3D Experiences</a></li><li><a href="services.html">Cybersecurity</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:annanogero@gmail.com">annanogero@gmail.com</a></li><li><a href="https://wa.me/254143276663" target="_blank" rel="noopener noreferrer">+254 143 276 663</a></li><li><a href="#">Nairobi, Kenya</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span>Annan Software Team</span>. All rights reserved.</p>
+      <p>Built by <span>AST</span> — Nairobi, Kenya</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js" defer></script>
+</body>
+</html>
